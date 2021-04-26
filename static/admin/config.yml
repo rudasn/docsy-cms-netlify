@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Lofms/docsy-cms-netlify
+  repo: Lofms/docsy-cms-netlify.git
   site_domain: https://distracted-jackson-3d92bf.netlify.app/
   branch: master
 
