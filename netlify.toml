@@ -7,6 +7,6 @@
   command = "git submodule update -f --init && npm install postcss-cli && npm install autoprefixer && hugo"
 # "production" environment specific build settings
 [build.environment]
-  HUGO_VERSION = "0.76.5"
+  HUGO_VERSION = "0.82.1"
   HUGO_THEME = "docsy"
   HUGO_ENV = "production"
