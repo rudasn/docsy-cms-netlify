@@ -13,7 +13,7 @@ publish_mode: editorial_workflow
 # These lines should *not* be indented
 media_folder: "/static/images/uploads" # Media files will be stored in the repo under static/images/uploads
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
-
+allow_nesting: true
 collections:
   - label: "Blog"
     name: "blog"
