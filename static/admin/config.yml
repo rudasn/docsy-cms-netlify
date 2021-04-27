@@ -17,8 +17,9 @@ public_folder: "/images/uploads" # The src attribute for uploaded media will beg
 collections:
   - label: "Blog"
     name: "blog"
-    folder: "en/blog/news"
+    folder: "content/en/blog/news"
     create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}/index"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
