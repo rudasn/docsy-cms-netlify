@@ -19,7 +19,7 @@ collections:
     name: "blog"
     folder: "content/en/blog/news"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}/index"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}.md"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
