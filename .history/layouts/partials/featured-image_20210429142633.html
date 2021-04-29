@@ -1,0 +1,10 @@
+{{ $w := .w | default 480 }}
+{{ $h := .h | default 180 }}
+{{ $p := .p }}
+{{ $class := .class | default "ml-3" }}
+{{ $image := $p.Params.Thumbnail }}
+{{ with $image }}
+    <figure class="{{ $class }}" style="width:100%">
+        
+    </figure>
+{{ end }}
