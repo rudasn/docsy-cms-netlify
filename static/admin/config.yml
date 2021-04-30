@@ -23,13 +23,7 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image",
-        name: 
-          - {format}
-          - {test},
-        widget: "image",
-        required: false
-        }
+      - {label: "Featured Image", name , widget: "image", required: false, {label: "Title", name: "title", widget: "string"}}
       - {label: "Body", name: "body", widget: "markdown"}
 
 
