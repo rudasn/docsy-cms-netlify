@@ -25,6 +25,8 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "test" , widget: "image", required: false, {label: "Title", name: "title", widget: "string"}}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Socialshare", "socialshare", default: true}
+      
 
 
 
