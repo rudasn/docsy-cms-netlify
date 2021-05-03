@@ -32,7 +32,7 @@ collections:
         fields: 
           - {label: "Street Address", name: "street", widget: "string"}
           - {label: "City", name: "city", widget: "string"}
-          - {label: "Bredd", name: "width", options:["left","center","right"], widget: "select"}
+          - {label: "Bredd", name: "width", options: ["left", "center", "right"], widget: "select"}
           - {label: "Featured Image", name: "test" , widget: "image", required: false}
       
 
