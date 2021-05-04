@@ -31,7 +31,7 @@ collections:
         collapsed: true
         fields: 
           - {label: "Description", name: "alt", widget: "string"}
-          - {label: "Bredd", name: "width", options: ["left", "center", "right"], widget: "select"}
+          - {label: "Position (listan)", name: "position", options: ["left", "top", "right"], widget: "select"}
           - {label: "Featured Image", name: "src" , widget: "image", required: false}
       
 
