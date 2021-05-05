@@ -3,4 +3,10 @@
 Add styles or override variables from the theme here.
 
 */
+.td-navbar-cover .nav-link {
+    color:aqua !important
+}
 
+.td-navbar-cover .nav-link .active{
+    color:red !important
+}
