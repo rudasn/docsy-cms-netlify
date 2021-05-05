@@ -26,7 +26,7 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Socialshare", name: "socialshare", default: true, widget: "hidden"}
       - label: "Featured image"
-        name: "resources"
+        name: "Featured_image"
         widget: "object"
         collapsed: true
         fields: 
