@@ -26,10 +26,11 @@ collections:
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Socialshare", name: "socialshare", default: true, widget: "hidden"}
       - label: "Featured image"
-        name: "Featured_image"
+        name: "Resources"
         widget: "object"
         collapsed: true
         fields: 
+          - {label: "Type", name: "type", default: "featured", widget: "hidden"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Description", name: "alt", widget: "string"}
           - {label: "Position (listan)", name: "position", options: ["left", "top", "right"], widget: "select"}
