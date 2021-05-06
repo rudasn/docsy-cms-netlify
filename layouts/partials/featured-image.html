@@ -2,12 +2,14 @@
 {{ $h := .h | default 180 }}
 {{ $p := .p }}
 {{ $class := .class | default "ml-3" }}
-{{ $resource:= resources.Get $p.Params.Resources.Src }}
-{{$p.Params}}
-{{ $image := $resource.Resize "x400" }}
-{{ with $image }}
-    <figure class="{{ $class }}" style="width:100%">
-        {{.RelPermalink}}
-        <img src="{{ .RelPermalink }}" alt="Featured Image for {{ $p.Title }}" width="100%" height="100%">
-    </figure>
+
+
+
+{{ range  $p.Params.Resources }}
+  {{ . }}--------
+{{ end }}
+{{ with .Resources.ByType "image" }}
+{{ range . }}
+{{ .RelPermalink }}
+{{ end }}
 {{ end }}
