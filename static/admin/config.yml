@@ -30,7 +30,7 @@ collections:
         widget: "object"
         collapsed: true
         fields: 
-          - {label: "Type", name: "type", default: "featured", widget: "hidden"}
+          - {label: "Type", name: "type", default: "image", widget: "hidden"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Description", name: "alt", widget: "string"}
           - {label: "Position (listan)", name: "position", options: ["left", "top", "right"], widget: "select"}
