@@ -1,0 +1,39 @@
+/*
+
+Add styles or override variables from the theme here.
+
+*/
+
+.button {
+    background-color: #ffff; /* Green */
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+  }
+
+  .td-navbar .nav-link {
+    color: #000 !important;
+  }
+ .td-navbar-cover .nav-link {
+   color: #ffff !important;
+ }
+
+ .bg {
+   background-color: #faf8f8ef;
+ }
+
+ .left {
+   width: 75%;
+ }
+
+ .right {
+   width: 25%
+   margin: 0
+   
+ }
