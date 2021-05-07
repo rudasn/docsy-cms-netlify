@@ -57,7 +57,7 @@ collections:
       - {label: "Socialshare", name: "socialshare", default: true, widget: "hidden"} 
 
 
-
+weight: 1
 
 
         
