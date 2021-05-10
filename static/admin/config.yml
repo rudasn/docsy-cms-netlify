@@ -23,54 +23,18 @@ collections:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
-<<<<<<< HEAD
       - {label: "Socialshare", name: "socialshare", default: true, widget: "hidden"} 
-        - label: "Featured image"
-          name: "Resources"
-          widget: "object"
-          collapsed: false
-          fields: 
-            - {label: "Type", name: "type", default: "image", widget: "hidden"}
-            - {label: "Title", name: "title", widget: "string"}
-            - {label: "Description", name: "alt", widget: "string"}
-            - {label: "Position (listan)", name: "position", options: ["left", "top", "right"], widget: "select"}
-            - {label: "Featured Image", name: "src" , widget: "image", required: false}
-        
-=======
-      - {label: "Socialshare", name: "socialshare", default: true, widget: "hidden"}
       - label: "Featured image"
         name: "Resources"
-        widget: "list"
+        widget: "object"
         collapsed: false
         fields: 
-          - label: "Featured image"
-            name: "Resources"
-            widget: "object"
-            collapsed: false
-            fields: 
-              - {label: "Type", name: "type", default: "image", widget: "hidden"}
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Description", name: "alt", widget: "string"}
-              - {label: "Position (listan)", name: "position", options: ["left", "top", "right"], widget: "select"}
-              - {label: "Featured Image", name: "src" , widget: "image", required: false}
-   
-  - label: "Produkter"
-    name: "products"
-    folder: "content/sv/products/"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "LinkTitle", name: "linktitle", widget: "string"}
-      - {label: "weight", name: "weight", widget: "number"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "string"}
-      - {label: "Featured Image", name: "test" , widget: "image", required: false}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Socialshare", name: "socialshare", default: true, widget: "hidden"} 
-
-
->>>>>>> 86efbc842be28535c2fa2a922bbf2756e1e5d395
+          - {label: "Type", name: "type", default: "image", widget: "hidden"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "alt", widget: "string"}
+          - {label: "Position (listan)", name: "position", options: ["left", "top", "right"], widget: "select"}
+          - {label: "Featured Image", name: "src" , widget: "image", required: false}
+        
 
 
 
