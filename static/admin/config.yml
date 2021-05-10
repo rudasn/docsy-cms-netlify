@@ -27,7 +27,7 @@ collections:
       - {label: "Socialshare", name: "socialshare", default: true, widget: "hidden"}
       - label: "Featured image"
         name: "Resources"
-        widget: "list"
+        widget: "object"
         collapsed: false
         fields:  
           - {label: "Type", name: "type", default: "image", widget: "hidden"}
