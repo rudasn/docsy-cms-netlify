@@ -30,11 +30,11 @@ collections:
         widget: "list"
         collapsed: false
         fields:  
-        - {label: "Type", name: "type", default: "image", widget: "hidden"}
-        - {label: "Title", name: "title", widget: "string"}
-        - {label: "Description", name: "alt", widget: "string"}
-        - {label: "Position (listan)", name: "position", options: ["left", "top", "right"], widget: "select"}
-        - {label: "Featured Image", name: "src" , widget: "image", required: false}
+          - {label: "Type", name: "type", default: "image", widget: "hidden"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Description", name: "alt", widget: "string"}
+          - {label: "Position (listan)", name: "position", options: ["left", "top", "right"], widget: "select"}
+          - {label: "Featured Image", name: "src" , widget: "image", required: false}
     
 
 
