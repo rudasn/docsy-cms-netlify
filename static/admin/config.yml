@@ -25,9 +25,9 @@ collections:
       - {label: "Featured Image", name: "test" , widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Socialshare", name: "socialshare", default: true, widget: "hidden"} 
-      - {label: "Featured image",
+      - label: "Featured image",
         name: "Resources",
-        widget: "object",
+        widget: "list",
         collapsed: false,
         fields: 
           - {label: "Type", name: "type", default: "image", widget: "hidden"}
@@ -35,7 +35,6 @@ collections:
           - {label: "Description", name: "alt", widget: "string"}
           - {label: "Position (listan)", name: "position", options: ["left", "top", "right"], widget: "select"}
           - {label: "Featured Image", name: "src" , widget: "image", required: false}
-      }
           
 
 
