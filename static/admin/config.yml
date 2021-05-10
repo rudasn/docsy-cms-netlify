@@ -24,7 +24,7 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Socialshare", name: "socialshare", default: true, widget: "hidden"} 
-      - {label: "Featured image"
+      - label: "Featured image"
         name: "Resources"
         widget: "object"
         collapsed: false
@@ -34,7 +34,6 @@ collections:
           - {label: "Description", name: "alt", widget: "string"}
           - {label: "Position (listan)", name: "position", options: ["left", "top", "right"], widget: "select"}
           - {label: "Featured Image", name: "src" , widget: "image", required: false}
-      }
         
 
 
