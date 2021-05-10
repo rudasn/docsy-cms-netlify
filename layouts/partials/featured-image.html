@@ -5,8 +5,8 @@
 
 
 
-{{ range  $p.Params.Resources }}
-  {{ . }}--------
+{{ range where $p.Params.Resources "image" "image" }}
+  {{ . }}ddsada
 {{ end }}
 {{ with .Resources.ByType "image" }}
 {{ range . }}
