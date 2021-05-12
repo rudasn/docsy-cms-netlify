@@ -25,13 +25,13 @@
 					{{ else if eq .position "right" }}
 						{{$.Scratch.Set "position" .position}}
 						{{$.Scratch.Set "class" "float-right mr-3 pt-1 d-none d-md-block" }}
-						{{$.Scratch.Set "w" 1250 }}
-						{{$.Scratch.Set "h" 300 }}
+						{{$.Scratch.Set "w" 300 }}
+						{{$.Scratch.Set "h" 200 }}
 					{{ else if eq .position "left" }}
 						{{$.Scratch.Set "position" .position}}
 						{{$.Scratch.Set "class" "float-left mr-3 pt-1 d-none d-md-block" }}
-						{{$.Scratch.Set "w" 1250 }}
-						{{$.Scratch.Set "h" 300 }}
+						{{$.Scratch.Set "w" 300 }}
+						{{$.Scratch.Set "h" 200 }}
 					{{end}}
 				{{ end }}
 				{{$class := $.Scratch.Get "class"}}
