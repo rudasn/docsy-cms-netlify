@@ -1,5 +1,5 @@
 ---
-title: bnbnbnbnbmb
+title: Left
 date: 2021-05-12T11:46:30.084Z
 socialshare: true
 Resources:
