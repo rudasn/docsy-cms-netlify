@@ -3,9 +3,8 @@
 {{ $p := .p }}
 {{ $class := .class | default "ml-3" }}
 
-
-{{ $image := resources.Get "images/onboard7.jpg" }}
-{{ $image }}
+{{range where $p.Params.Resources ".name" "featured"}}
+{{ $image := resources.Get .src }}
 {{ with $image }}
 {{ $image := .Fill (printf "%dx%d" $w $h ) }}
 <figure class="{{ $class }}" style="width: {{ $image.Width }}px">
@@ -15,3 +14,5 @@
 {{ end }}
 </figure>
 {{ end }}
+{{ end }}
+
