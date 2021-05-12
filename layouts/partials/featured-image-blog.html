@@ -1,0 +1,21 @@
+{{ $w := .w | default 480 }}
+{{ $h := .h | default 180 }}
+{{ $p := .p }}
+{{ $class := .class | default "ml-3" }}
+
+{{range where $p.Params.Resources ".name" "featured"}}
+{{ $image := resources.Get .src }}
+{{ with $image }}
+{{ $image := .Fiit (printf "%dx%d" $w $h ) }}
+<figure class="{{ $class }}" style="width: {{ $image.Width }}px">
+<img src="{{ $image.RelPermalink }}" alt="Featured Image for {{ $p.Title }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
+{{ with $image.Params.byline }}
+ <figcaption class="mt-2 mt-md-0"><small class="text-muted">{{ . | html }}</small></figcaption>
+{{ end }}
+</figure>
+{{ end }}
+{{ end }}
+
+
+
+
