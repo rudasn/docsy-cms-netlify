@@ -1,0 +1,76 @@
+
+<style>
+.button{
+background-color: black;
+border-radius: 4px;
+text-align: start;
+max-width: 35%;
+max-height: auto;
+padding: 1px 0px;
+padding-left: ;
+font-size: 12px;
+
+
+color: white
+
+}
+.bt_text {
+color: white;}
+
+.grid-container {  
+display: grid;  
+grid-template-columns: repeat(auto-fit, minmax(100px, 1fr ));
+
+grid-gap: 32px;
+grid-auto-flow: dense;
+
+}
+.link_right{
+float: right;
+
+}
+/* Single column display for phones */
+@media (max-width: 459px) {
+    .grid-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+}
+
+</style>
+
+<div class="grid-container p-0 ml-0">  
+     
+    <a class="button" href="">Läs mer</a>     
+  
+    <a class="link_right " href="">Teknisk dokumentation</a>
+
+    <a class="link_right" href="https://apirequest.jobtechdev.se/">Ansök om APInyckel</a>
+   
+  </div>
+
+
+<!--
+
+<div >
+    <div class="row m-0">
+        <div class="column">
+            <button class="list_btn">
+                <a class ="bt_text"href="">Läs mer</a>
+            </button>
+        </div>
+        <div class="column">
+            <a href="">Teknisk dokumentation</a>
+        </div>
+        <div class="column">
+            <a href="">Ansök om en APInyckel</a>
+        </div>
+    </div>
+
+</div>
+-->
+
+
+
+    

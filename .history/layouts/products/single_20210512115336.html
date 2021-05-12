@@ -1,0 +1,14 @@
+{{ define "main" }}
+{{ .Render "content" }}
+{{ end }}
+
+{{ $taxo := "filter" }} <!-- Use the plural form here -->
+{{ with .Param $taxo }}
+    <strong>Filter{{ if gt (len .) 1 }}s{{ end }}:</strong>
+    {{ range $index, $director := . }}
+        {{- if gt $index 0 }}, {{ end -}}
+        {{ with $.Site.GetPage (printf "/%s/%s" $taxo $director) -}}
+            <a href="{{ .Permalink }}">{{ $director }}</a>
+        {{- end -}}
+    {{- end -}}
+{{ end }}

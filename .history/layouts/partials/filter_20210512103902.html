@@ -1,0 +1,43 @@
+<style>
+.bg-filter {
+    background-color: rgb(155, 148, 148);
+    border: solid;
+   
+}
+
+</style>
+
+
+<div class="container-fluid bg-filter">
+<h4>Filter</h4>
+<div id="myBtnContainer">
+    <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+    <button class="btn" onclick="filterSelection('api')"> Api</button>
+    <button class="btn" onclick="filterSelection('opendata')"> Öppna data</button>
+    <button class="btn" onclick="filterSelection('öppen källkod')"> Öppen källkod</button>
+    <button class="btn" onclick="filterSelection('applikation')"> Applikation</button>
+  </div>
+
+</div>
+
+<script>
+    {{- if .Param "socialshare" }}  
+  {{ $title := .Title }}
+  {{ $url := absLangURL ( slicestr .URL 1 )}}
+  {{ $body := print $title ", by " .Site.Title "\n" .Params.description "\n\n" $url "\n" }}
+
+  <section class="social-share">    
+    <h6>{{T "share"}}</h6>
+    <ul class="share-icons">
+      <!-- Twitter -->
+      {{ if .Site.Params.social.share.twitter }}
+      <li>
+        <a href="https://twitter.com/intent/tweet?hashtags=JobTech Development&amp;url=https://jobtechdev.se{{ $url  }}&amp;text={{ .Title }}" target="_blank" rel="noopener" aria-label="Share on Twitter" class="share-btn twitter">
+          {{ partial "svg/twitter.svg" (dict "class" "widget-social__link-icon") }}
+          <p>Twitter</p>
+          </a>
+      </li>
+      {{ end }}
+
+</script>
+   

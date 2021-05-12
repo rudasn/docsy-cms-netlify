@@ -1,0 +1,34 @@
+<style>
+.bg-filter {
+    background-color: brown;
+    border: solid;
+   
+}
+
+</style>
+
+
+<div class="container-fluid bg-filter">
+<h4>Filter</h4>
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="
+  {{ range .Site.Taxonomies.filter.api }} 
+  {{ .Title }}
+  {{ .Description }}
+{{ end }}"> API</button>
+
+
+  <button class="btn" onclick="filterSelection('animals')"> Animals</button>
+  <button class="btn" onclick="filterSelection('fruits')"> Fruits</button>
+  <button class="btn" onclick="filterSelection('colors')"> Colors</button>
+</div>
+
+</div>
+
+<ul>
+    {{ range .Site.Taxonomies.series.golang }}
+      <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
+    {{ end }}
+  </ul>
+  

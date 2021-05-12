@@ -1,0 +1,10 @@
+
+public/
+resources/
+node_modules/
+tech-doc-hugo
+gi
+
+# vim temporary files
+*~
+*.sw?

@@ -1,0 +1,38 @@
+<style>
+.bg-filter {
+    background-color: rgb(235, 225, 225);
+    border: solid;
+   
+}
+.btn {
+    border: solid 2px;
+    outline: none;
+    padding: 12px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+    margin- bottom: 10px;
+  }
+
+</style>
+
+
+<div class="container-fluid bg-filter">
+<h4>Filter</h4>
+<div>
+  <button class="btn active" onclick="filterSelection('all')"> Visa alla</button>
+  <button class="btn" onclick="
+  {{ range .Site.Taxonomies.filter.api }} 
+  {{ .Title }}
+  {{ .Description }}
+{{ end }}"> API</button>
+
+
+  <button class="btn" onclick="filterSelection('opendata')"> Öppna data</button>
+  <button class="btn" onclick="filterSelection('opensource')"> Öppen Källkod</button>
+  <button class="btn" onclick="filterSelection('policy')"> policy</button>
+</div>
+
+</div>
+
+
+  
