@@ -2,7 +2,7 @@
 title: "Jobsearch"
 linkTitle: "Jobsearch"
 weight: 1
-description: >
+description: 
   What does your user need to understand about your project in order to use it - or potentially contribute to it? 
 ---
 
