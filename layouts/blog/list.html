@@ -1,0 +1,67 @@
+{{ define "main" }}
+{{ if .Parent.IsHome }}
+{{ $.Scratch.Set "blog-pages" (where .Site.RegularPages "Section" .Section) }}
+{{ else }}
+{{$.Scratch.Set "blog-pages" .Pages }}
+{{ end }}
+{{ $.Scratch.Add "position" ""}}
+{{ $.Scratch.Add "class" ""}}
+{{ $.Scratch.Add "h" 0}}
+{{ $.Scratch.Add "w" 0}}
+<div class="row">
+	<div class="col-12">
+		{{- if .Pages -}}
+		{{ $pag := .Paginate (( $.Scratch.Get "blog-pages").GroupByDate "2006")}}
+			{{ range $pag.PageGroups }}
+			<h2>{{ T "post_posts_in" }} {{ .Key }}</h2>
+			<ul class="list-unstyled mt-4">
+				{{ range .Pages }}
+				{{range where .Params.Resources ".name" "featured"}}
+					{{ if eq .position "top"}}
+						{{$.Scratch.Set "position" .position}}
+						{{$.Scratch.Set "class" "mx-auto mr-3 pt-1 d-none d-md-block" }}
+						{{$.Scratch.Set "w" 1250 }}
+						{{$.Scratch.Set "h" 300 }}
+					{{ else if .position "right" }}
+						{{$.Scratch.Set "position" .position}}
+						{{$.Scratch.Set "class" "float-right mr-3 pt-1 d-none d-md-block" }}
+						{{$.Scratch.Set "w" 1250 }}
+						{{$.Scratch.Set "h" 300 }}
+					{{ else if .position "left" }}
+						{{$.Scratch.Set "position" .position}}
+						{{$.Scratch.Set "class" "float-left mr-3 pt-1 d-none d-md-block" }}
+						{{$.Scratch.Set "w" 1250 }}
+						{{$.Scratch.Set "h" 300 }}
+					{{end}}
+				{{ end }}
+				{{$class := $.Scratch.Get "class"}}
+				{{$w := $.Scratch.Get "w"}}
+				{{$h := $.Scratch.Get "h"}}
+				<li class="media mb-4">
+					<div class="media-body">
+						<h5 class="mt-0 mb-1"><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h5>
+						<p class="mb-2 mb-md-3"><small class="text-muted">{{ .Date.Format ($.Param "time_format_blog") }} {{ T "ui_in"}} {{ .CurrentSection.LinkTitle }}</small></p>
+						{{ $position := $.Scratch.Get "position"}}
+						{{ if eq $position "top"}}
+							{{ partial "featured-image-blog-top.html" (dict "p" . "w" $w "h" $h "class" $class) }}
+						{{else}}
+							{{ partial "featured-image-blog.html" (dict "p" . "w" $w "h" $h "class" $class) }}
+						{{end}}
+						<p class="pt-0 mt-0">{{ .Plain | safeHTML | truncate 250 }}</p>
+						<p class="pt-0"><a href="{{ .RelPermalink }}">{{ T "ui_read_more"}}</a></p>
+					</div>
+				</li>
+				{{ end }}
+			</ul>
+			{{ end }}
+		{{ end }}
+	</div>
+</div>
+<div class="row pl-2 pt-2">
+	<div class="col">
+		{{ if .Pages }}
+			{{ template "_internal/pagination.html" . }}
+		{{ end }}
+	</div>
+</div>
+{{ end }}
