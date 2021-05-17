@@ -262,4 +262,3 @@
   }
   
   window['HugoTagsFilter'] = HugoTagsFilter;
-  © 2021 GitHub, Inc.

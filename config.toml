@@ -21,6 +21,7 @@ enableMissingTranslationPlaceholders = true
   tag = "tags"
   filter = "filter"
 
+
 # Highlighting config
 pygmentsCodeFences = true
 pygmentsUseClasses = false
@@ -88,6 +89,7 @@ time_format_blog = "2006-01-02"
 section = ["HTML", "print"]
 
 [params]
+mainSections = ["blog", "products"]
 copyright = "The Docsy Authors"
 privacy_policy = "https://policies.google.com/privacy"
 
