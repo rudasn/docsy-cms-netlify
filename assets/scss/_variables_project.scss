@@ -3,12 +3,86 @@
 Add styles or override variables from the theme here.
 
 */
+
+  /*** Important ***/
+  .tf-filter-item {
+    display: none;
+  }
+
+  button.active {
+    background-color: #ddd;
+  }
+  
+  button.disable-button {
+    border-style: dashed;
+  }
+  
+  .show-item {
+    display: inline-block;
+  }
+
+  /*** Aesthetics ***/
+  section {
+    margin-top: 18px !important;
+  }
+  .tf-items-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .tf-item {
+    width: 250px;
+    margin: 8px;
+    background: #fff;
+    padding: 2rem;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .2);
+    border-radius: 2px;
+    margin-bottom: 2rem
+  }
+
+  .chroma {
+    overflow-x: auto;
+    padding: 4px;
+    
+  }
+
+  .panel {
+      padding: 0 18px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+  }
+  
+  .acc:after {
+    content: '\02795';
+    color: #fff;
+    margin-left: 5px;
+  }
+
+  .acc.active:after {
+      content: "\2796";
+  }
+  
+  .navbtn {
+    padding: 0.5rem!important;
+    font-size: 90%!important;
+    
+  }
+  .nava {
+    text-transform: none;
+    font-size: 90%!important;
+  }
+
 .td-navbar-cover .nav-link {
     color:aqua !important
 }
 
-
+button > .type-button {
+  border-radius: 25% !important;
+}
 .button {
+    
     background-color: #ffff; /* Green */
     border: none;
     color: black;
@@ -18,7 +92,7 @@ Add styles or override variables from the theme here.
     display: inline-block;
     font-size: 16px;
     font-weight: bold;
-    border-radius: 4px;
+    border-radius: 25%;
   }
 
   .td-navbar .nav-link {

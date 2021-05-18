@@ -1,15 +1,13 @@
 ---
-tag: "annons"
-title: "Jobsearch"
-linkTitle: "Jobsearch"
+title: "test"
+linkTitle: "Jobsearchs"
 weight: 1
 description: 
   What does your user need to understand about your project in order to use it - or potentially contribute to it? 
-tags:
-  - chapter
-  - insects 
-  - beetle 
-  - goat
+categorys:
+  - UI
+types:
+  - Open research
 ---
 
 {{% pageinfo %}}

@@ -17,8 +17,9 @@ defaultContentLanguageInSubdir = false
 enableMissingTranslationPlaceholders = true
 
 [taxonomies]
-  category = "categories"
+  category = "categorys"
   tag = "tags"
+  type = "types"
   filter = "filter"
 
 

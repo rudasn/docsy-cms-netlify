@@ -82,7 +82,7 @@
 </head>
 
 <body>
-{{ partial "filter-nav" . }}
+
 <section>
 
 {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
@@ -92,21 +92,7 @@
 {{ $.Scratch.Set "noAuthors" 0 }}
 
 {{ range where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
-  {{ with .Params.author }}
-    {{ if eq ( printf "%T" . ) "string"  }}
-      {{ if ( not ( in ($.Scratch.Get "authors") . ) ) }}
-        {{ $.Scratch.Add "authors" . }}
-      {{ end }}
-    {{ else if ( printf "%T" . ) "[]string" }}
-      {{ range . }}
-        {{ if ( not ( in ($.Scratch.Get "authors") . ) ) }}
-          {{ $.Scratch.Add "authors" . }}
-        {{ end }}
-      {{ end }}
-    {{ end }}
-  {{ else }}
-    {{ $.Scratch.Add "noAuthors" 1 }}
-  {{ end }}
+
 {{ end }}
 
 
@@ -117,36 +103,7 @@
   {{ with .Params.tags }}{{ else }}{{ $.Scratch.Add "untagged" 1 }}{{ end }}
 {{ end }}
 
-<hr >
 
-<div class="tf-wrapper">
-  <div class="tf-buttons-container flex-grow">
-    <h4>Sections</h4>
-    <button xx id="selectAllSections" onclick="htf.showAll('section')">
-      All Sections
-    </button>
-    {{ range $sections }}
-      <button xx class="sect-button" id="sect-{{ . | urlize }}" onclick="htf.checkFilter('{{ . | urlize }}', 'sect-')">
-        {{ . | title }} <span id="ssect-{{ . | urlize }}"> -count-</span> | <span id="csect-{{ . | urlize }}"> -count-</span>
-      </button>
-    {{ end }}
-    
-    <hr>
-    
-    <h4>Authors</h4>
-    <button xx id="selectAllAuthors" onclick="htf.showAll('authors')">
-      All Authors
-    </button>
-    {{ range $.Scratch.Get "authors" }}
-      <button xx class="auth-button" id="auth-{{ . | replaceRE "[.]" "_" | urlize }}" onclick="htf.checkFilter('{{ . | replaceRE "[.]" "_" | urlize }}', 'auth-')">
-        {{ . }} <span id="sauth-{{ . | replaceRE "[.]" "_" | urlize }}"> -count-</span> | <span id="cauth-{{ . | replaceRE "[.]" "_" | urlize }}"> -count-</span>
-      </button>
-    {{ end }}
-    {{ if gt ( $.Scratch.Get "noAuthors") 0 }}
-    <button xx class="auth-button" id="auth-no-author" onclick="htf.checkFilter('no-author', 'auth-')">
-      No Author <span id="sauth-no-author"> -count-</span> | <span id="cauth-no-author"> -count-</span>
-    </button>
-    {{ end }}
     
     
     <hr>
