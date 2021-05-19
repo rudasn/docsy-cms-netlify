@@ -7,7 +7,9 @@ description:
 categorys:
   - API
 types:
-  - Open data 
+  - Open data
+statuses:
+  - Released
 ---
 
 {{% pageinfo %}}
