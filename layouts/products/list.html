@@ -79,19 +79,19 @@
     </span> </h5>
        
     <h5>Status<span>
-    <button xx class="" id="selectAllStatuses" onclick="htf.showAll('statuses')">
+    <button xx class="btn-products" id="selectAllStatuses" onclick="htf.showAll('statuses')">
       Alla
     </button>
     {{ range $statuses }}
       {{ if .Term }}
-        <button xx class="status-button" id="status-{{ .Term | replaceRE "[.]" "_" | urlize }}" onclick="htf.checkFilter('{{ .Term | replaceRE "[.]" "_" | urlize }}', 'status-')">
+        <button xx class="status-button btn-products" id="status-{{ .Term | replaceRE "[.]" "_" | urlize }}" onclick="htf.checkFilter('{{ .Term | replaceRE "[.]" "_" | urlize }}', 'status-')">
           <span>{{.Term | humanize | title }}</span>
           <span id="sstatuses-{{ .Term | urlize }}"> -count-</span> | <span id="cstatuses-{{ .Term | urlize }}"> -count-</span>
         </button>
       {{ end }}
     {{ end }}
     {{ if gt ( $.Scratch.Get "untagged") 0 }}
-    <button xx class="status-button" id="status-tfuntagged" onclick="htf.checkFilter('tfuntagged', 'statuses-')">
+    <button xx class="status-button btn-products" id="status-tfuntagged" onclick="htf.checkFilter('tfuntagged', 'statuses-')">
       Untagged <span id="sstatuses-tfuntagged"> -count-</span> | <span id="cstatuses-tfuntagged"> -count-</span>
     </button>
     {{ end }}
