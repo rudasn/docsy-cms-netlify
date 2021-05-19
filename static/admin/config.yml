@@ -37,7 +37,7 @@ collections:
           - {label: "Featured Image", name: "src" , widget: "image", required: false}
   - label: "product"
     name: "product"
-    folder: "content/products"
+    folder: "content/sv/products"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -45,6 +45,8 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Kategori", name: "categorys", widget: "list"} 
+      - {label: "Typ", name: "types", widget: "list"} 
+      - {label: "Status", name: "statuses", widget: "list"} 
         
 
 
