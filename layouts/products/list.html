@@ -37,53 +37,54 @@
   {{ with .Params.tags }}{{ else }}{{ $.Scratch.Add "untagged" 1 }}{{ end }}
 {{ end }}
 
-<hr >
 
 
-    
-    <h4>Kategorier</h4>
-    <button xx class="" id="selectAllCategorys" onclick="htf.showAll('categorys')">
+    <div class="filter-box">
+    <h5>KATEGORI <span>
+    <button xx class="btn-products" id="selectAllCategorys" onclick="htf.showAll('categorys')">
       Alla
     </button>
     {{ range $categorys }}
       {{ if .Term }}
-        <button xx class="category-button" id="category-{{ .Term | replaceRE "[.]" "_" | urlize }}" onclick="htf.checkFilter('{{ .Term | replaceRE "[.]" "_" | urlize }}', 'category-')">
+        <button xx class="category-button btn-products" id="category-{{ .Term | replaceRE "[.]" "_" | urlize }}" onclick="htf.checkFilter('{{ .Term | replaceRE "[.]" "_" | urlize }}', 'category-')">
           <span>{{.Term | humanize | title }}</span>
           <span id="scategorys-{{ .Term | urlize }}"> -count-</span> | <span id="ccategorys-{{ .Term | urlize }}"> -count-</span>
         </button>
       {{ end }}
     {{ end }}
     {{ if gt ( $.Scratch.Get "untagged") 0 }}
-    <button xx class="catecory-button" id="category-tfuntagged" onclick="htf.checkFilter('tfuntagged', 'category-')">
+    <button xx class="catecory-button btn-products " id="category-tfuntagged" onclick="htf.checkFilter('tfuntagged', 'category-')">
       Untagged <span id="scategorys-tfuntagged"> -count-</span> | <span id="ccategorys-tfuntagged"> -count-</span>
     </button>
     {{ end }}
+    </span></h4>
     
-    <hr >
+    
 
-    <h4>Types</h4>
-    <button xx class="" id="selectAllTypes" onclick="htf.showAll('types')">
+    <h5>TYP <span>
+    <button xx class="btn-products" id="selectAllTypes" onclick="htf.showAll('types')">
       All Types
     </button>
     {{ range $types }}
       {{ if .Term }}
-        <button xx class="type-button" id="type-{{ .Term | replaceRE "[.]" "_" | urlize }}" onclick="htf.checkFilter('{{ .Term | replaceRE "[.]" "_" | urlize }}', 'type-')">
+        <button xx class="type-button btn-products" id="type-{{ .Term | replaceRE "[.]" "_" | urlize }}" onclick="htf.checkFilter('{{ .Term | replaceRE "[.]" "_" | urlize }}', 'type-')">
           <span>{{.Term | humanize | title }}</span>
           <span id="stypes-{{ .Term | urlize }}"> -count-</span> | <span id="ctypes-{{ .Term | urlize }}"> -count-</span>
         </button>
       {{ end }}
     {{ end }}
     {{ if gt ( $.Scratch.Get "untagged") 0 }}
-    <button xx class="type-button" id="type-tfuntagged" onclick="htf.checkFilter('tfuntagged', 'types-')">
+    <button xx class="type-button btn-products" id="type-tfuntagged" onclick="htf.checkFilter('tfuntagged', 'types-')">
       Untagged <span id="stypes-tfuntagged"> -count-</span> | <span id="ctypes-tfuntagged"> -count-</span>
     </button>
     {{ end }}
+    </span> </h4>
     
-    <hr >
+    
   </div>
       
     
-  <hr >
+  
   <div><h2><span id="selectedItemCount"></span> Items</h2></div>
   <div class="tf-items-container">      
   {{ range $pages.ByPublishDate.Reverse }}

@@ -77,10 +77,47 @@ Add styles or override variables from the theme here.
 .td-navbar-cover .nav-link {
     color:aqua !important
 }
-
-button > .type-button {
-  border-radius: 25% !important;
+/* button products*/
+.btn-products {
+  display: inline-block;
+  padding:0.3em 1.2em;
+  margin: 0 0.3em 0;
+  border-radius: 2em; 
+  box-sizing: border-box;
+  text-decoration: none;   
+  font-weight: 300px;
+  color: #110f0f;
+  background-color: #e8ebec;
+  text-align: center;
+  transition: all 0.2s;
+  .btn-products:hover{
+  background-color: bisque;
+  }
+  @media all and (max-width:30em){
+    .test{
+      display: block;
+      margin: 2em auto;
+    }
+  }
+ 
 }
+
+.filter-box {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #ddd;
+    color: #000;
+    border-radius: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    margin-top: 40px;
+
+}
+
 .button {
     
     background-color: #ffff; /* Green */
@@ -92,7 +129,7 @@ button > .type-button {
     display: inline-block;
     font-size: 16px;
     font-weight: bold;
-    border-radius: 25%;
+    
   }
 
   .td-navbar .nav-link {
