@@ -35,9 +35,9 @@ collections:
           - {label: "Description", name: "alt", widget: "string"}
           - {label: "Position (listan)", name: "position", options: ["left", "top", "right"], widget: "select"}
           - {label: "Featured Image", name: "src" , widget: "image", required: false}
-  - label: "Blog"
-    name: "blog"
-    folder: "content/en/blog/news"
+  - label: "product"
+    name: "product"
+    folder: "content/products"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
