@@ -118,9 +118,9 @@
       
       <h4><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
       
-      <div>{{ with .Params.categorys }}{{ range . }}<tag>{{ . | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</div>
-      <div>{{ with .Params.types }}{{ range . }}<tag>{{ . | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</div>
-      <div>{{ with .Params.statuses }}{{ range . }}<tag>{{ . | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</div>
+      <div>{{ with .Params.categorys }}{{ range . }}<tag>{{ . | humanize | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</div>
+      <div>{{ with .Params.types }}{{ range . }}<tag>{{ . | humanize | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</div>
+      <div>{{ with .Params.statuses }}{{ range . }}<tag>{{ . | humanize | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</div>
       
     </div>
   {{ end }}
