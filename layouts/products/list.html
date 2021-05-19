@@ -31,13 +31,14 @@
 {{ $categorys := $.Site.Taxonomies.categorys.ByCount }}
 {{ $tags := $.Site.Taxonomies.tags.ByCount }}
 {{ $types := $.Site.Taxonomies.types.ByCount }}
+{{ $statuses := $.Site.Taxonomies.statuses.ByCount }}
 
 {{ $.Scratch.Set "untagged" 0 }}
 {{ range $pages }}
   {{ with .Params.tags }}{{ else }}{{ $.Scratch.Add "untagged" 1 }}{{ end }}
 {{ end }}
 
-<hr >
+<hr>
 
 
     
@@ -54,16 +55,16 @@
       {{ end }}
     {{ end }}
     {{ if gt ( $.Scratch.Get "untagged") 0 }}
-    <button xx class="catecory-button" id="category-tfuntagged" onclick="htf.checkFilter('tfuntagged', 'category-')">
+    <button xx class="category-button" id="category-tfuntagged" onclick="htf.checkFilter('tfuntagged', 'categorys-')">
       Untagged <span id="scategorys-tfuntagged"> -count-</span> | <span id="ccategorys-tfuntagged"> -count-</span>
     </button>
     {{ end }}
     
-    <hr >
+    <hr>
 
-    <h4>Types</h4>
+    <h4>Typer</h4>
     <button xx class="" id="selectAllTypes" onclick="htf.showAll('types')">
-      All Types
+      Alla
     </button>
     {{ range $types }}
       {{ if .Term }}
@@ -79,6 +80,26 @@
     </button>
     {{ end }}
     
+    <hr>
+
+    <h4>Status</h4>
+    <button xx class="" id="selectAllStatuses" onclick="htf.showAll('statuses')">
+      Alla
+    </button>
+    {{ range $statuses }}
+      {{ if .Term }}
+        <button xx class="status-button" id="status-{{ .Term | replaceRE "[.]" "_" | urlize }}" onclick="htf.checkFilter('{{ .Term | replaceRE "[.]" "_" | urlize }}', 'status-')">
+          <span>{{.Term | humanize | title }}</span>
+          <span id="sstatuses-{{ .Term | urlize }}"> -count-</span> | <span id="cstatuses-{{ .Term | urlize }}"> -count-</span>
+        </button>
+      {{ end }}
+    {{ end }}
+    {{ if gt ( $.Scratch.Get "untagged") 0 }}
+    <button xx class="status-button" id="status-tfuntagged" onclick="htf.checkFilter('tfuntagged', 'statuses-')">
+      Untagged <span id="sstatuses-tfuntagged"> -count-</span> | <span id="cstatuses-tfuntagged"> -count-</span>
+    </button>
+    {{ end }}
+    
     <hr >
   </div>
       
@@ -89,19 +110,17 @@
   {{ range $pages.ByPublishDate.Reverse }}
     <div  class="tf-filter-item tf-item" 
           data-categorys="{{ with .Params.categorys }}{{ range . }}{{ . | replaceRE "[.]" "_" | urlize }} {{ end }}{{ else }} tfuntagged{{ end }}"
-          data-types="{{ with .Params.types }}{{ range . }}{{ . | replaceRE "[.]" "_" | urlize }} {{ end }}{{ else }} tfuntagged{{ end }}"
-          data-section="{{ .Section }}"
-          
-          data-authors="{{ with .Params.author }}{{ if eq ( printf "%T" . ) "string" }}{{ . | replaceRE "[.]" "_" | urlize }}{{ else if eq ( printf "%T" . ) "[]string" }}{{ range . }}{{ . | replaceRE "[.]" "_" | urlize }} {{end}}{{end}}{{else}}no-author{{end}}"
-          
+          data-types="{{ with .Params.types }}{{ range . }}{{ . | replaceRE "[.]" "_" | urlize }} {{ end }}{{ else }} tfuntagged{{ end }}"   
+          data-statuses="{{ with .Params.statuses }}{{ range . }}{{ . | replaceRE "[.]" "_" | urlize }} {{ end }}{{ else }} tfuntagged{{ end }}"     
           >
-      <h6>{{.Section}}</h6>
-      <h5>{{ with .Params.author }}{{ if eq ( printf "%T" . ) "string" }}{{.|humanize|title}}{{ else if eq ( printf "%T" . ) "[]string" }}{{ range . }}{{.|humanize|title}} {{end}}{{end}}{{else}}No Author{{end}}</h5>
+      
+
       
       <h4><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
       
-      <div>{{ with .Params.categorys }}{{ range . }}<tag>{{ . | humanize | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</div>
-      <div>{{ with .Params.types }}{{ range . }}<tag>{{ . | humanize | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</div>
+      <div>{{ with .Params.categorys }}{{ range . }}<tag>{{ . | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</div>
+      <div>{{ with .Params.types }}{{ range . }}<tag>{{ . | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</div>
+      <div>{{ with .Params.statuses }}{{ range . }}<tag>{{ . | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</div>
       
     </div>
   {{ end }}
@@ -131,6 +150,15 @@ var htfConfig = {
       attrName: 'data-types',
       selectedPrefix: 'stypes-',
       countPrefix: 'ctypes-'
+    },
+    {
+      name: 'statuses',
+      prefix: 'status-',
+      buttonClass: 'status-button',
+      allSelector: '#selectAllStatuses',
+      attrName: 'data-statuses',
+      selectedPrefix: 'sstatuses-',
+      countPrefix: 'cstatuses-'
     }
   ],
   showItemClass: "show-item",

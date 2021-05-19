@@ -8,6 +8,8 @@ categorys:
   - UI
 types:
   - Open research
+statuses:
+  - Beta
 ---
 
 {{% pageinfo %}}

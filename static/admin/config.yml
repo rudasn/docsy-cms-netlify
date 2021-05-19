@@ -35,7 +35,17 @@ collections:
           - {label: "Description", name: "alt", widget: "string"}
           - {label: "Position (listan)", name: "position", options: ["left", "top", "right"], widget: "select"}
           - {label: "Featured Image", name: "src" , widget: "image", required: false}
-          
+  - label: "Blog"
+    name: "blog"
+    folder: "content/en/blog/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Kategori", name: "categorys", widget: "list"} 
+        
 
 
 
