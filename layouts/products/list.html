@@ -37,7 +37,7 @@
 {{ range $pages }}
   {{ with .Params.tags }}{{ else }}{{ $.Scratch.Add "untagged" 1 }}{{ end }}
 {{ end }}
-
+  <div class="content-products">
     <div class="filter-box">
     <h5>KATEGORI <span>
     <button xx class="btn-products" id="selectAllCategorys" onclick="htf.showAll('categorys')">
@@ -96,9 +96,10 @@
     </button>
     {{ end }}
     
-  </span> </h5>
-
+    </span> </h5>
+  
   </div>
+
       
     
   
@@ -113,7 +114,11 @@
       
 
       
-      <h4><a href="{{ .RelPermalink }}">{{ .Title }}</a></h4>
+      <h4><a href="{{ .RelPermalink }}">{{ .Title }} </a></h4>
+      <br>
+      {{ .Description}}
+      <br>
+      <br>
       
       <div>{{ with .Params.categorys }}{{ range . }}<tag>{{ . | humanize | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</div>
       <div>{{ with .Params.types }}{{ range . }}<tag>{{ . | humanize | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</div>
