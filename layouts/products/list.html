@@ -39,64 +39,68 @@
 {{ end }}
   <div class="content-products">
     <div class="filter-box">
-    <h5>KATEGORI <span>
-    <button xx class="btn-products" id="selectAllCategorys" onclick="htf.showAll('categorys')">
-      Alla
-    </button>
-    {{ range $categorys }}
-      {{ if .Term }}
-        <button xx class="category-button btn-products" id="category-{{ .Term | replaceRE "[.]" "_" | urlize }}" onclick="htf.checkFilter('{{ .Term | replaceRE "[.]" "_" | urlize }}', 'category-')">
-          <span>{{.Term | humanize | title }}</span>
-          <span id="scategorys-{{ .Term | urlize }}"> -count-</span> | <span id="ccategorys-{{ .Term | urlize }}"> -count-</span>
-        </button>
-      {{ end }}
-    {{ end }}
-    {{ if gt ( $.Scratch.Get "untagged") 0 }}
-    <button xx class="category-button btn-products " id="category-tfuntagged" onclick="htf.checkFilter('tfuntagged', 'categorys-')">
-      Untagged <span id="scategorys-tfuntagged"> -count-</span> | <span id="ccategorys-tfuntagged"> -count-</span>
-    </button>
-    {{ end }}
-    </span></h5>
+        <div class="row align">
+          <h5 class="name">KATEGORI </h5>    
+          <button xx class="btn-products" id="selectAllCategorys" onclick="htf.showAll('categorys')">
+            Alla
+          </button>
+          {{ range $categorys }}
+            {{ if .Term }}
+              <button xx class="category-button btn-products" id="category-{{ .Term | replaceRE "[.]" "_" | urlize }}" onclick="htf.checkFilter('{{ .Term | replaceRE "[.]" "_" | urlize }}', 'category-')">
+                <span>{{.Term | humanize | title }}</span>
+                <span id="scategorys-{{ .Term | urlize }}"> -count-</span> | <span id="ccategorys-{{ .Term | urlize }}"> -count-</span>
+              </button>
+            {{ end }}
+          {{ end }}
+          {{ if gt ( $.Scratch.Get "untagged") 0 }}
+          <button xx class="category-button btn-products " id="category-tfuntagged" onclick="htf.checkFilter('tfuntagged', 'categorys-')">
+            Untagged <span id="scategorys-tfuntagged"> -count-</span> | <span id="ccategorys-tfuntagged"> -count-</span>
+          </button>
+          {{ end }}
+        </div>
+   
     
     
-    <h5>TYP <span>
-    <button xx class="btn-products" id="selectAllTypes" onclick="htf.showAll('types')">
-      All Types
-    </button>
-    {{ range $types }}
-      {{ if .Term }}
-        <button xx class="type-button btn-products" id="type-{{ .Term | replaceRE "[.]" "_" | urlize }}" onclick="htf.checkFilter('{{ .Term | replaceRE "[.]" "_" | urlize }}', 'type-')">
-          <span>{{.Term | humanize | title }}</span>
-          <span id="stypes-{{ .Term | urlize }}"> -count-</span> | <span id="ctypes-{{ .Term | urlize }}"> -count-</span>
-        </button>
-      {{ end }}
-    {{ end }}
-    {{ if gt ( $.Scratch.Get "untagged") 0 }}
-    <button xx class="type-button btn-products" id="type-tfuntagged" onclick="htf.checkFilter('tfuntagged', 'types-')">
-      Untagged <span id="stypes-tfuntagged"> -count-</span> | <span id="ctypes-tfuntagged"> -count-</span>
-    </button>
-    {{ end }}
-    </span> </h5>
+        <div class="row align">
+          <h5 class="name">TYP </h5>
+          <button xx class="btn-products" id="selectAllTypes" onclick="htf.showAll('types')">
+            All Types
+          </button>
+          {{ range $types }}
+            {{ if .Term }}
+              <button xx class="type-button btn-products" id="type-{{ .Term | replaceRE "[.]" "_" | urlize }}" onclick="htf.checkFilter('{{ .Term | replaceRE "[.]" "_" | urlize }}', 'type-')">
+                <span>{{.Term | humanize | title }}</span>
+                <span id="stypes-{{ .Term | urlize }}"> -count-</span> | <span id="ctypes-{{ .Term | urlize }}"> -count-</span>
+              </button>
+            {{ end }}
+          {{ end }}
+          {{ if gt ( $.Scratch.Get "untagged") 0 }}
+          <button xx class="type-button btn-products" id="type-tfuntagged" onclick="htf.checkFilter('tfuntagged', 'types-')">
+            Untagged <span id="stypes-tfuntagged"> -count-</span> | <span id="ctypes-tfuntagged"> -count-</span>
+          </button>
+          {{ end }}
+        </div>
        
-    <h5>Status<span>
-    <button xx class="btn-products" id="selectAllStatuses" onclick="htf.showAll('statuses')">
-      Alla
-    </button>
-    {{ range $statuses }}
-      {{ if .Term }}
-        <button xx class="status-button btn-products" id="status-{{ .Term | replaceRE "[.]" "_" | urlize }}" onclick="htf.checkFilter('{{ .Term | replaceRE "[.]" "_" | urlize }}', 'status-')">
-          <span>{{.Term | humanize | title }}</span>
-          <span id="sstatuses-{{ .Term | urlize }}"> -count-</span> | <span id="cstatuses-{{ .Term | urlize }}"> -count-</span>
-        </button>
-      {{ end }}
-    {{ end }}
-    {{ if gt ( $.Scratch.Get "untagged") 0 }}
-    <button xx class="status-button btn-products" id="status-tfuntagged" onclick="htf.checkFilter('tfuntagged', 'statuses-')">
-      Untagged <span id="sstatuses-tfuntagged"> -count-</span> | <span id="cstatuses-tfuntagged"> -count-</span>
-    </button>
-    {{ end }}
-    
-    </span> </h5>
+        <div class="row align">  
+          <h5 class="name">Status</h5>
+          <button xx class="btn-products" id="selectAllStatuses" onclick="htf.showAll('statuses')">
+            Alla
+          </button>
+          {{ range $statuses }}
+            {{ if .Term }}
+              <button xx class="status-button btn-products" id="status-{{ .Term | replaceRE "[.]" "_" | urlize }}" onclick="htf.checkFilter('{{ .Term | replaceRE "[.]" "_" | urlize }}', 'status-')">
+                <span>{{.Term | humanize | title }}</span>
+                <span id="sstatuses-{{ .Term | urlize }}"> -count-</span> | <span id="cstatuses-{{ .Term | urlize }}"> -count-</span>
+              </button>
+            {{ end }}
+          {{ end }}
+          {{ if gt ( $.Scratch.Get "untagged") 0 }}
+          <button xx class="status-button btn-products" id="status-tfuntagged" onclick="htf.checkFilter('tfuntagged', 'statuses-')">
+            Untagged <span id="sstatuses-tfuntagged"> -count-</span> | <span id="cstatuses-tfuntagged"> -count-</span>
+          </button>
+          {{ end }}
+        </div>     
+   
   
   </div>
 
@@ -113,16 +117,20 @@
           >
       
 
-      
-      <h4><a href="{{ .RelPermalink }}">{{ .Title }} </a></h4>
-      <br>
+      <div class="row align">
+
+        <h4><a class="name" href="{{ .RelPermalink }}">{{ .Title }} </a></h4>
+        <br>
+        
+     
+        <div class="btn-products">{{ with .Params.categorys }}{{ range . }}<tag>{{ . | humanize | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</div>
+        <div  class="btn-products">{{ with .Params.types }}{{ range . }}<tag>{{ . | humanize | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</div>
+        <div class="btn-products">{{ with .Params.statuses }}{{ range . }}<tag>{{ . | humanize | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</div>
+      </div>  
       {{ .Description}}
       <br>
       <br>
-      
-      <div>{{ with .Params.categorys }}{{ range . }}<tag>{{ . | humanize | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</div>
-      <div>{{ with .Params.types }}{{ range . }}<tag>{{ . | humanize | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</div>
-      <div>{{ with .Params.statuses }}{{ range . }}<tag>{{ . | humanize | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</div>
+      {{partial "link"}}
       
     </div>
   {{ end }}
