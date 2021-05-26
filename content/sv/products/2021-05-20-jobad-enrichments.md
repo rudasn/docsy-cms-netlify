@@ -9,6 +9,15 @@ description: JobAd Enrichments är en AI-lösning som automatiskt identifierar
 date: 2021-05-20T12:15:08.332Z
 categorys:
   - api
+types:
+  - öppna data
 ---
-bnnvnmvnmvmvmv
+dhfhfjshdjg<g
 
+dkgjkdf<gjk<dfhdjjk
+
+f,mmhfkzdmhöf
+
+fökhökzdkhkj
+
+fhlölhözdflöhl
