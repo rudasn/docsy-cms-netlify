@@ -107,8 +107,9 @@
       
     
   
-  <div><h2><span id="selectedItemCount"></span> Items</h2></div>
-  <div class="tf-items-container">      
+  <!--<div><h2><span id="selectedItemCount"></span> Items</h2></div>-->
+  <div class="tf-items-container ">
+    <br>      
   {{ range $pages.ByPublishDate.Reverse }}
     <div  class="tf-filter-item tf-item" 
           data-categorys="{{ with .Params.categorys }}{{ range . }}{{ . | replaceRE "[.]" "_" | urlize }} {{ end }}{{ else }} tfuntagged{{ end }}"
@@ -118,14 +119,15 @@
       
 
       <div class="row align">
-
-        <h4><a class="name" href="{{ .RelPermalink }}">{{ .Title }} </a></h4>
-        <br>
-        
-     
-        <div class="btn-products">{{ with .Params.categorys }}{{ range . }}<tag>{{ . | humanize | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</div>
-        <div  class="btn-products">{{ with .Params.types }}{{ range . }}<tag>{{ . | humanize | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</div>
-        <div class="btn-products">{{ with .Params.statuses }}{{ range . }}<tag>{{ . | humanize | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</div>
+          <div class="col-sm">
+            <h4><a class="name" href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong> </a></h4>
+          </div>
+          <br>
+          <br>         
+          <button class="btn-products">{{ with .Params.categorys }}{{ range . }}<tag>{{ . | humanize | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</button>
+          <button  class="btn-products">{{ with .Params.types }}{{ range . }}<tag>{{ . | humanize | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</button>
+          <button class="btn-products">{{ with .Params.statuses }}{{ range . }}<tag>{{ . | humanize | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</button>
+       
       </div>  
       {{ .Description}}
       <br>

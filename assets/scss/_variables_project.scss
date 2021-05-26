@@ -96,6 +96,7 @@ Add styles or override variables from the theme here.
  .bg {
    background-color: #faf8f8ef;
  }
+ 
 /* startsidan*/
 
 .button {
@@ -166,6 +167,12 @@ body {
   width: 60%;  
   padding: 10px;
 }
+  @media screen and (max-width: 1500px){
+   .content-products{
+      width: 750px;
+      font-size: 1.6em;
+    }
+  }
 
 /* button products*/
 .btn-products {
@@ -184,7 +191,7 @@ body {
   background-color: bisque;
   }
   @media all and (max-width:30em){
-    .btn-products{
+   .btn-products{
       display: block;
       margin: 2em auto;
     }
@@ -194,6 +201,7 @@ body {
 .name {
   width: 100px;
   align-items: baseline;
+  padding-right: 2.0em;
   
  }
 
@@ -211,6 +219,7 @@ body {
 align-items: baseline;
 
 }
+
 
 
 
