@@ -126,6 +126,7 @@ div.col-4 {
   padding-left: 5vw;
   padding-right: 0px !important;
   flex-direction: row;
+  display: flex;
   
 }
 
@@ -160,7 +161,18 @@ body {
   margin-top: 10px;
 
 }
-
+@media screen and (max-width: 768px){
+  .filter-box {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 19px;
+    padding-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    
+}
+}
 .content-products {
 
   margin: auto;
@@ -169,9 +181,11 @@ body {
 }
   @media screen and (max-width: 1500px){
    .content-products{
-      width: 750px;
-      font-size: 1.6em;
+      width: 100%;
+      font-size: 16px;
     }
+    
+    
   }
 
 /* button products*/
