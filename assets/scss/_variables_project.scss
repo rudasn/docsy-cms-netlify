@@ -129,6 +129,9 @@ div.col-4 {
   display: flex;
   
 }
+.td-default main {
+  background-color: #faf8f8ef;
+}
 
 /* temporary*/
 body {
@@ -213,7 +216,7 @@ body {
     }
   }
 }
-
+/* läs mer knapp list */
 .btn-list {
  
   display: inline-flex;
@@ -251,6 +254,8 @@ body {
 align-items: baseline;
 
 }
+
+
 
 
 
