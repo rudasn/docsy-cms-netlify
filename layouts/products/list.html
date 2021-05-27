@@ -132,8 +132,20 @@
       {{ .Description}}
       <br>
       <br>
-      {{partial "link"}}
-      
+    
+  <div class="grid-container p-0 ml-0" >
+    <div class="row align">
+      <div class="col-sm">
+        <a class="button btn-list" href="{{ .RelPermalink}}">LÄS MER</a>     
+      </div>
+      <div>
+        <a class="button btn-link" href=""><strong>DOKUMENTATION</strong></a>
+        <a class="button btn-link" href="https://apirequest.jobtechdev.se/"><strong>ANSÖK OM API-NYCKEL </strong></a>
+      </div>
+  </div>
+
+
+    </div> 
     </div>
   {{ end }}
   </div>
