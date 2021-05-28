@@ -115,20 +115,18 @@
           data-categorys="{{ with .Params.categorys }}{{ range . }}{{ . | replaceRE "[.]" "_" | urlize }} {{ end }}{{ else }} tfuntagged{{ end }}"
           data-types="{{ with .Params.types }}{{ range . }}{{ . | replaceRE "[.]" "_" | urlize }} {{ end }}{{ else }} tfuntagged{{ end }}"   
           data-statuses="{{ with .Params.statuses }}{{ range . }}{{ . | replaceRE "[.]" "_" | urlize }} {{ end }}{{ else }} tfuntagged{{ end }}"     
-          >
-      
+          >     
 
       <div class="row align">
           <div class="col-sm">
-            <h4><a class="name" href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong> </a></h4>
-          </div>
-          <br>
-          <br>         
+            <h4><a class="" href="{{ .RelPermalink }}"><strong>{{ .Title }}</strong> </a></h4>
+          </div>         
+           
           <button class="btn-products">{{ with .Params.categorys }}{{ range . }}<tag>{{ . | humanize | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</button>
           <button  class="btn-products">{{ with .Params.types }}{{ range . }}<tag>{{ . | humanize | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</button>
-          <button class="btn-products">{{ with .Params.statuses }}{{ range . }}<tag>{{ . | humanize | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</button>
-       
+          <button class="btn-products">{{ with .Params.statuses }}{{ range . }}<tag>{{ . | humanize | title }}</tag> {{ end }}{{ else }}<tag>untagged</tag>{{ end }}</button>       
       </div>  
+      <br>
       {{ .Description}}
       <br>
       <br>

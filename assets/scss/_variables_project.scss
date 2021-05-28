@@ -38,12 +38,7 @@ Add styles or override variables from the theme here.
     width: 250px;
     margin: 8px;
     background: #fff;
-   
-    
-    border-radius: 2px;
-    margin-bottom: 2rem
-    
-    
+    border-radius: 2px;       
   }
 
   .chroma {
@@ -147,7 +142,7 @@ body {
 
  
   border-radius: 2px;
-  margin-bottom: 2rem
+ 
 }
 
 .filter-box {
@@ -171,8 +166,7 @@ body {
     padding-bottom: 10px;
     padding-left: 19px;
     padding-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: 10px;  
     width: 100%;
     
     
@@ -184,11 +178,12 @@ body {
   width: 60%;  
   padding: 10px;
 }
-  @media screen and (max-width: 1200px){
+@media screen and (max-width: 1200px){
    .content-products{
       width: 100%;
       font-size: 16px;
     }
+    
     
     
   }
@@ -211,15 +206,27 @@ body {
   .btn-products:hover{
   background-color: bisque;
   }
-  @media all and (max-width:30em){
-   .btn-products{
-      display: block;
-      margin: 2em auto;
-      font-size: 10px;
-    }
-  }
 }
-/* läs mer knapp list */
+  @media all and (max-width:40em){
+  .btn-products{
+    display: block;   
+    font-size: 11px;
+  }
+  .name {
+    width: 60px !important;
+    font-size: 11px;
+    padding-right: 12px !important;
+  
+  }
+  .td-default main section {
+    padding-top: 0em !important;
+    padding-bottom: 4rem;
+  }
+ 
+   
+  }
+
+/* läs mer knapp lista */
 .btn-list {
  
   display: inline-flex;
@@ -229,8 +236,8 @@ body {
   border-radius: 0.4em;
   padding: 6px;
 
-
 }
+/* länkarna till dokumentation / nyckel*/
 .btn-link {
   background-color: #faf8f8ef;
   font-size: 14px;
@@ -258,6 +265,10 @@ body {
 .align {
 align-items: baseline;
 
+}
+.container, .container-fluid {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
 
 
