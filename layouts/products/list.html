@@ -2,7 +2,9 @@
 
 {{ define "main" }}
 <div class="td-content ">
+  
 <section>
+
 
 {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
 {{ $sections := .Site.Params.mainSections }}
@@ -37,10 +39,18 @@
 {{ range $pages }}
   {{ with .Params.tags }}{{ else }}{{ $.Scratch.Add "untagged" 1 }}{{ end }}
 {{ end }}
+
   <div class="content-products">
+    <div style="text-align: left;">
+      <h2>Från ego till eko</h2>
+      <p> Arbetsmarknaden förändrar sig snabbare än någonsin och erbjuder hundratals digitala väglednings- och matchningstjänster.<br>För att 
+        människor ska kunna navigera och hitta varandra behöver tjänsterna kommunicera och anpassas till nya behov. Det kräver en ny form av digital infrastruktur.
+
+      </p>
+    </div>
     <div class="filter-box">
-        <div class="row align">
-          <h5 class="name">KATEGORI </h5>    
+        <div class="row align ">
+          <h5 class="name">KATEGORI </h5>            
           <button xx class="btn-products" id="selectAllCategorys" onclick="htf.showAll('categorys')">
             Alla
           </button>
@@ -58,10 +68,12 @@
           </button>
           {{ end }}
         </div>
-   
+        <br>
+
     
+          
     
-        <div class="row align">
+        <div class="row align ">
           <h5 class="name">TYP </h5>
           <button xx class="btn-products" id="selectAllTypes" onclick="htf.showAll('types')">
             All Types
@@ -80,8 +92,9 @@
           </button>
           {{ end }}
         </div>
+        <br>
        
-        <div class="row align">  
+        <div class="row align ">  
           <h5 class="name">Status</h5>
           <button xx class="btn-products" id="selectAllStatuses" onclick="htf.showAll('statuses')">
             Alla
@@ -103,6 +116,7 @@
    
   
   </div>
+  
 
       
     

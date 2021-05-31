@@ -132,7 +132,7 @@ div.col-4 {
 /* temporary*/
 body {
 
-  background-color: #faf8f8ef;
+  background-color: #faf8f8ef !important;
 }
 
 .tf-item {
@@ -150,7 +150,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background: #ddd;
+  background: rgb(219, 214, 214);
   color: #000;
   border-radius: 10px;
   padding-top: 20px;
@@ -270,7 +270,9 @@ align-items: baseline;
   padding-left: 0px !important;
   padding-right: 0px !important;
 }
-
+.no-js {
+  padding-right: 0px;
+}
 
 
 
