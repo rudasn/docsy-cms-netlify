@@ -1,6 +1,6 @@
 ---
 title: JobAd Enrichments
-description: AI-lösning som identifierar och extraherar relevant information i ostrukturerade jobbannonser
+description: Extraherar relevant data från platsannonser, villkte gör det möjligt att automatiskt se vad arbetsgivarna behöver eller efterfrågar.
 date: 2021-05-20T12:15:08.332Z
 categorys:
   - api

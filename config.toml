@@ -205,10 +205,10 @@ enable = false
 
 # social share buttons
 [params.social.share]
-  facebook = true
+  facebook = false
   linkedin = true
-  twitter = true
-  whatsapp = true
+  twitter = false
+  whatsapp = false
   email = true
 
 [params.filter]

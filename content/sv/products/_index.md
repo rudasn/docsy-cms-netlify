@@ -1,5 +1,5 @@
 ---
-title: "ssdsada"
+title: ""
 linkTitle: "Produkter"
 weight: 20
 menu:
