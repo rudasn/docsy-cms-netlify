@@ -1,7 +1,6 @@
 backend:
   name: git-gateway
-  repo: Lofms/docsy-cms-netlify
-  site_domain: https://distracted-jackson-3d92bf.netlify.app/
+  repo: rudasn/docsy-cms-netlify
   branch: master
 
 
